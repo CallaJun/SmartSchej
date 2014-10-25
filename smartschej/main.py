@@ -6,8 +6,8 @@ import webapp2
 from apiclient.discovery import build
 from oauth2client.client import OAuth2WebServerFlow
 import httplib2
-#from gdata.apps import service
-import gdata
+from gdata.apps import service
+import atom
 
 flow = OAuth2WebServerFlow(client_id='195549864721-i2juie0n9vvq5g7itrk49a4452easbse.apps.googleusercontent.com',
                            client_secret='12haQegMUPOGvJIa6RDVfhK8',
