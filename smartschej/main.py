@@ -7,6 +7,7 @@ from apiclient.discovery import build
 from oauth2client.client import OAuth2WebServerFlow
 import httplib2
 #from gdata.apps import service
+import gdata
 
 flow = OAuth2WebServerFlow(client_id='195549864721-i2juie0n9vvq5g7itrk49a4452easbse.apps.googleusercontent.com',
                            client_secret='12haQegMUPOGvJIa6RDVfhK8',
@@ -33,12 +34,13 @@ class NextHandler(webapp2.RequestHandler):
 
         template_values['eventname'] = eventname
         template_values['eventdescription'] = eventdescription
-
+        '''
         created_event = service.events().quickAdd(
             calendarId='primary',
             text=eventname).execute()
 
         print created_event['id']
+        '''
 
         template = jinja_environment.get_template('views/next.html')
         self.response.out.write(template.render(template_values))
